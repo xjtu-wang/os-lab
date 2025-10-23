@@ -39,7 +39,7 @@ void* func1(){
     pthread_t tid1 = pthread_self();
     sem_wait(&empty);
     printf("thread 1:pid = %d, tid = %lu\n",pid1,tid1);
-    system("out/system_call");
+    execl("out/system_call",NULL);
     sem_post(&full);
     pthread_exit(NULL); 
 }
@@ -56,7 +56,7 @@ void* func2(){
     pthread_t tid2 = pthread_self();
     sem_wait(&full);
     printf("thread 2:pid = %d, tid = %lu\n",pid2,tid2);
-    system("out/system_call");
+    execl("out/system_call",NULL);
     sem_post(&empty);
     pthread_exit(NULL); 
 }

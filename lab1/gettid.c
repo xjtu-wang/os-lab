@@ -4,6 +4,6 @@
 
 int main(){
     pthread_t tid = pthread_self();
-    printf("thread tid = %lu\n",tid);
+    printf("gettid thread tid = %lu\n",tid);
     return 0;
 }
